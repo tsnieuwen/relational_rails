@@ -1,7 +1,9 @@
-<a href="/teams">Task Index</a>
+<a href="/teams">Team Index</a>
 
 <h3><%= @team.name %></h3>
 
 <p>City: <%= @team.city %></p>
 <p>Playoff hunt?: <%= @team.playoff_picture %></p>
 <p>Number of championships: <%= @team.championships %></p>
+
+<a href="/teams/<%= @team.id %>/edit">Update Team</a>

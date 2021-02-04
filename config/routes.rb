@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'teams/new', to: 'team#new'
   post '/teams', to: 'team#create'
   get '/teams/:id', to: 'team#show'
+  get '/teams/:id/edit', to: 'team#edit'
+  patch 'teams/:id', to: 'team#update'
 end

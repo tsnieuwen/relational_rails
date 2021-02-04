@@ -22,4 +22,20 @@ class TeamController < ApplicationController
     @team = Team.find(params[:id])
   end
 
+  def edit
+    @team = Team.find(params[:id])
+  end
+
+  def update
+    team = Team.find(params[:id])
+    team.update({
+      city: params[:team][:city],
+      name: params[:team][:name],
+      playoff_picture: params[:team][:playoff_picture],
+      championships: params[:team][:championships]
+      })
+    team.save
+    redirect_to "/teams/#{team.id}"
+  end
+
 end
