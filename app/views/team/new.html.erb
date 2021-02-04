@@ -1,0 +1,13 @@
+<h1>Input new team information</h1>
+<form action="/teams" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="city">City:</label>
+  <input type="text" id="city" name='team[city]'><br><br>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name='team[name]'><br><br>
+  <label for="playoff_picture">Playoff Picture?:</label>
+  <input type="boolean" id="playoff_picture" name='team[playoff_picture]'><br><br>
+  <label for="championships">Number of Championships:</label>
+  <input type="integer" id="championships" name='team[championships]'><br><br>
+  <input type="submit" value="Create Team">
+</form>
