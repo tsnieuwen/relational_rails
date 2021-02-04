@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/teams/:id', to: 'team#show'
   get '/teams/:id/edit', to: 'team#edit'
   patch 'teams/:id', to: 'team#update'
+  delete 'teams/:id', to: 'team#destroy'
 end
