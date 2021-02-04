@@ -18,4 +18,8 @@ class TeamController < ApplicationController
     redirect_to '/teams'
   end
 
+  def show
+    @team = Team.find(params[:id])
+  end
+
 end

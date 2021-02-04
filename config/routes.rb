@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/teams', to: 'team#index'
   get 'teams/new', to: 'team#new'
   post '/teams', to: 'team#create'
+  get '/teams/:id', to: 'team#show'
 end
