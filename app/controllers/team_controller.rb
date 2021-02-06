@@ -43,4 +43,10 @@ class TeamController < ApplicationController
     redirect_to '/teams'
   end
 
+  def show_athletes
+    @team = Team.find(params[:id])
+    @athletes = Athlete.all
+  end
+
+
 end

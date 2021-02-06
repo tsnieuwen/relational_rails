@@ -1,0 +1,9 @@
+<h1>All Athletes</h1>
+
+<% @athletes.each do |athlete| %>
+  <p><a href="/athletes/<%= athlete.id %>"><%= athlete.name %></a></p>
+<% end %><br>
+
+<!-- <a href="/teams/new">New Team</a><br><br> -->
+
+<a href="/">Return to main menu</a>

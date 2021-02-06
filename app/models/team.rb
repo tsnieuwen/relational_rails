@@ -1,2 +1,3 @@
 class Team < ApplicationRecord
-end 
+  has_many :athletes
+end

@@ -1,0 +1,9 @@
+<h1>Athletes</h1>
+
+<% @athletes.each do |athlete| %>
+  <p><a href="/teams/<%= athlete.id %>"><%= athlete.name %></a></p>
+<% end %><br>
+
+<form action="/teams/<%= @team.id %>/athletes/new" method="get">
+  <button type="submit">Create Athlete</button>
+</form>
