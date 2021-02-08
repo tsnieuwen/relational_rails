@@ -1,12 +1,12 @@
-<h1>Input new athlete information</h1>
-<form action="/athletes" method="post">
+<h1>Update athlete information</h1>
+<form action="/athletes/<%= @athlete.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="team_id" value="<%= params[:id] %>">
+  <input type="hidden" name="_method" value="PATCH" />
   <label for="name">Name:</label>
   <input type="text" id="name" name='athlete[name]'><br><br>
   <label for="age">Age:</label>
   <input type="integer" id="age" name='athlete[age]'><br><br>
-  <label for="injury_list">Currently injured?:</label>
+  <label for="injury_list">Currently Injured?:</label>
   <input type="boolean" id="injury_list" name='athlete[injury_list]'><br><br>
-  <input type="submit" value="Create Athlete">
+  <input type="submit" value="Update Athlete">
 </form>

@@ -1,7 +1,9 @@
 <h1>All Athletes</h1>
 
 <% @athletes.each do |athlete| %>
-  <p><a href="/athletes/<%= athlete.id %>"><%= athlete.name %></a></p>
+  <h3><a href="/athletes/<%= athlete.id %>"><%= athlete.name %></a></h3>
+  <p>Age: <%= athlete.age %></p>
+  <p>Currently Injured?: <%= athlete.injury_list %></p>
 <% end %><br>
 
 <a href="/">Return to main menu</a>

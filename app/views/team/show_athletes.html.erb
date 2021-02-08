@@ -2,7 +2,9 @@
 
 <% @athletes.each do |athlete| %>
   <% if @team.id == athlete.team_id %>
-    <p><a href="/athletes/<%= athlete.id %>"><%= athlete.name %></a></p>
+    <h3><a href="/athletes/<%= athlete.id %>"><%= athlete.name %></a></h3>
+    <p>Age: <%= athlete.age %></p>
+    <p>Currently Injured?: <%= athlete.injury_list %></p>
   <% end %>
 <% end %><br>
 
