@@ -1,9 +1,18 @@
-<h1>All Athletes</h1>
+<a href="/teams">Team Index</a>
+<h1>Athlete Index</h1>
 
 <% @athletes.each do |athlete| %>
-  <h3><a href="/athletes/<%= athlete.id %>"><%= athlete.name %></a></h3>
-  <p>Age: <%= athlete.age %></p>
-  <p>Currently Injured?: <%= athlete.injury_list %></p>
+  <% if athlete.injury_list == true %>
+    <h3><%= athlete.name %></h3>
+    <p>Age: <%= athlete.age %></p>
+    <p>Currently Injured?: <%= athlete.injury_list %></p>
+    <a href="/athletes/<%=athlete.id %>/edit">Update Athlete</a><br>
+    <form action="/athletes/<%= athlete.id %>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete"/>
+    </form>
+  <% end %>
 <% end %><br>
 
 <a href="/">Return to main menu</a>

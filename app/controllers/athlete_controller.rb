@@ -1,6 +1,7 @@
 class AthleteController < ApplicationController
   def index
-    @athletes = Athlete.all
+    all_athletes = Athlete.all
+    @athletes = all_athletes.order(:created_at)
   end
 
   def show
@@ -37,6 +38,11 @@ class AthleteController < ApplicationController
       })
     athlete.save
     redirect_to "/athletes/#{athlete.id}"
+  end
+
+  def destroy
+    Athlete.destroy(params[:id])
+    redirect_to '/athletes'
   end
 
 end

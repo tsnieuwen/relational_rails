@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get '/athletes/:id/edit', to: 'athlete#edit'
   get '/athletes/:id/edit', to: 'athlete#edit'
   patch '/athletes/:id', to: 'athlete#update'
+  delete '/athletes/:id', to: 'athlete#destroy'
 
 end
