@@ -1,0 +1,13 @@
+<h1>Update Customer</h1>
+
+<form action="/customers/<%= @customer.id %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="PATCH" />
+    <label for="name">Name:</label>
+    <input type="text" id="name" name='customer[name]'><br><br>
+    <label for="age">Age:</label>
+    <input type="integer" id="age" name='customer[age]'><br><br>
+    <label for="equipment">Rented Equipment?:</label>
+    <input type="boolean" id="equipment" name='customer[equipment]'><br><br>
+    <input type="submit" value="Update Resort">
+</form>

@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_230805) do
+ActiveRecord::Schema.define(version: 2021_02_09_001317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.boolean "equipment"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "resort_id"
+    t.index ["resort_id"], name: "index_customers_on_resort_id"
+  end
+
+  create_table "resorts", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.integer "cost"
+    t.boolean "at_capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string "city"
@@ -24,4 +43,5 @@ ActiveRecord::Schema.define(version: 2021_02_03_230805) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "customers", "resorts"
 end
