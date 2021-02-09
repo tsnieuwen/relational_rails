@@ -1,0 +1,8 @@
+<h1>All Resorts</h1>
+
+<% @resorts.each do |resort| %>
+  <h3><a href="/resorts/<%= resort.id %>"><%= resort.name %></a></h3>
+<% end %>
+
+<li><a href="/resorts/new">add a new resort</a></li>
+<li><a href="/">back to homepage</a></li>

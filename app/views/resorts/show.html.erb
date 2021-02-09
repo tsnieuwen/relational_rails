@@ -1,0 +1,15 @@
+<a href="/resorts">Back to Resorts Index</a>
+
+<h1><%= @resort.name %></h1>
+
+<p>City: <%= @resort.city %></p>
+<p>Cost: <%= @resort.cost %></p>
+<p>At Capacity?: <%= @resort.at_capacity %></p>
+
+<a href="/resorts/<%= @resort.id %>/edit">Update</a>
+<form action="/resorts/<%= @resort.id %>" method="POST">
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+   <input type="hidden" name="_method" value="DELETE">
+   <input type="submit" value="delete"/>
+ </form>
+<a href="/resorts/<%= @resort.id %>/customers">Customers at this Resort</a>

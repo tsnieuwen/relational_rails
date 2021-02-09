@@ -1,0 +1,9 @@
+<h1>All Customers</h1>
+
+<% @customers.each do |customer| %>
+  <h3><a href="/customers/<%= customer.id %>"><%= customer.name %></a></h3>
+  <p>Age: <%= customer.age %></p>
+  <p>Rented Equipment?: <%= customer.equipment %></p>
+<% end %>
+
+<li><a href="/">back to homepage</a></li>

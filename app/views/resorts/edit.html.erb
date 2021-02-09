@@ -1,0 +1,15 @@
+<h1>Update Resort</h1>
+
+<form action="/resorts/<%= @resort.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <label for="city">City:</label>
+  <input type="text" id="city" name='resort[city]'><br><br>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name='resort[name]'><br><br>
+  <label for="at_capacity">At Capacity?:</label>
+  <input type="boolean" id="at_capacity" name='resort[at_capacity]'><br><br>
+  <label for="cost">Cost:</label>
+  <input type="integer" id="cost" name='resort[cost]'><br><br>
+  <input type="submit" value="Update Resort">
+</form>
