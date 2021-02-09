@@ -1,7 +1,7 @@
 class TeamController < ApplicationController
 
   def index
-    @teams = Team.all
+    @teams = Team.order(created_at: :desc)
   end
 
   def new
@@ -41,6 +41,12 @@ class TeamController < ApplicationController
   def destroy
     Team.destroy(params[:id])
     redirect_to '/teams'
-  end 
+  end
+
+  def show_athletes
+    @team = Team.find(params[:id])
+    @athletes = Athlete.all
+  end
+
 
 end

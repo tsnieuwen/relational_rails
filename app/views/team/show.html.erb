@@ -1,3 +1,4 @@
+<a href="/athletes">Athlete Index</a><br>
 <a href="/teams">Team Index</a>
 
 <h3><%= @team.name %></h3>
@@ -5,8 +6,11 @@
 <p>City: <%= @team.city %></p>
 <p>Playoff hunt?: <%= @team.playoff_picture %></p>
 <p>Number of championships: <%= @team.championships %></p>
+<p>Total number of athletes: <%= @team.athletes.count %></p>
 
-<a href="/teams/<%= @team.id %>/edit">Update Team</a><br>
+<a href="/teams/<%= @team.id %>/edit">Update Team</a><br><br>
+
+<a href="/teams/<%= @team.id %>/athletes">View Athletes</a><br><br>
 
 <form action="/teams/<%= @team.id %>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

@@ -1,2 +1,4 @@
 class Team < ApplicationRecord
-end 
+  has_many :athletes
+  Team.order("created_at")
+end
