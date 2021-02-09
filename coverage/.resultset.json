@@ -244,6 +244,15 @@
           null,
           null,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -257,6 +266,27 @@
       "/Users/harrison/turing/mod2/projects/relational_rails/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/harrison/turing/mod2/projects/relational_rails/spec/features/resorts/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -274,8 +304,73 @@
           1,
           null
         ]
+      },
+      "/Users/harrison/turing/mod2/projects/relational_rails/app/models/resort.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/harrison/turing/mod2/projects/relational_rails/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/harrison/turing/mod2/projects/relational_rails/app/controllers/resorts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1612478467
+    "timestamp": 1612649160
   }
 }
