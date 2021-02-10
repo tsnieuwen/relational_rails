@@ -46,6 +46,7 @@ class TeamController < ApplicationController
   def show_athletes
     @team = Team.find(params[:id])
     @athletes = Athlete.all
+    require "pry"; binding.pry
   end
 
 

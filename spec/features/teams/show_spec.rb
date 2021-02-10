@@ -5,11 +5,13 @@
      team1 = Team.create(city: "Boston",
                          name: "Celtics",
                          playoff_picture: true,
-                         championships: 19)
+                         championships: 19,
+                         id: 1)
      team2 = Team.create(city: "LA",
                          name: "Lakers",
                          playoff_picture: true,
-                         championships: 15)
+                         championships: 15,
+                        id: 2)
      visit '/teams/1'
 
      expect(page).to have_content(team1.name)
