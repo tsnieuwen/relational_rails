@@ -302,13 +302,6 @@
           null
         ]
       },
-      "/Users/thomasnieuwenhuis/Desktop/Documents/Turing Docs/mod_2/week1/relational_rails/app/models/athlete.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/thomasnieuwenhuis/Desktop/Documents/Turing Docs/mod_2/week1/relational_rails/app/controllers/team_controller.rb": {
         "lines": [
           1,
@@ -332,33 +325,33 @@
           null,
           null,
           1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
           2,
-          2,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
           null,
           null,
           null,
@@ -370,8 +363,15 @@
           1,
           null
         ]
+      },
+      "/Users/thomasnieuwenhuis/Desktop/Documents/Turing Docs/mod_2/week1/relational_rails/app/models/athlete.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1612932337
+    "timestamp": 1612933141
   }
 }
