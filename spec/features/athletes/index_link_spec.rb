@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "As a visitor" do
   describe "When I visit any page on the site, there is a link to take me back to the Athletes Index'" do
-    it "It takes takes you back to athletes index" do
+    it "It takes you back to athletes index" do
       team1 = Team.create(city: "Boston",
                           name: "Celtics",
                           playoff_picture: true,
