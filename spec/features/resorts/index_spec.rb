@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Resorts index page' do
   it 'Shows each Resort name in the table' do
-    resort_1 = Resort.create(name: "Resort 1", city: "city 1", cost: 200, at_capactity: false)
-    resort_2 = Resort.create(name: "Resort 2", city: "city 2", cost: 300, at_capactity: false)
+    resort_1 = Resort.create(name: "Resort 1", city: "city 1", cost: 200, at_capacity: false)
+    resort_2 = Resort.create(name: "Resort 2", city: "city 2", cost: 300, at_capacity: false)
 
     visit '/resorts'
 
