@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   delete '/athletes/:id', to: 'athlete#destroy'
   patch 'teams/:id', to: 'team#update'
   delete 'teams/:id', to: 'team#destroy'
+
   get '/resorts', to: 'resorts#index'
   get '/resorts/new', to: 'resorts#new'
   post '/resorts', to: 'resorts#create'

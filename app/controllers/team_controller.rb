@@ -45,8 +45,11 @@ class TeamController < ApplicationController
 
   def show_athletes
     @team = Team.find(params[:id])
-    @athletes = Athlete.all
+    if (params[:filter_min_age])
+      @athletes = @team.filter_athletes(params[:filter_min_age])
+    else
+      @athletes = @team.athletes
+    end
   end
-
 
 end
