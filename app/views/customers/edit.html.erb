@@ -1,3 +1,5 @@
+<a href="/customers">Back to Customers Index</a></br>
+<a href="/resorts">Back to Resorts Index</a>
 <h1>Update Customer</h1>
 
 <form action="/customers/<%= @customer.id %>" method="post">
@@ -9,5 +11,5 @@
     <input type="integer" id="age" name='customer[age]'><br><br>
     <label for="equipment">Rented Equipment?:</label>
     <input type="boolean" id="equipment" name='customer[equipment]'><br><br>
-    <input type="submit" value="Update Resort">
+    <input type="submit" value="Update Customer">
 </form>

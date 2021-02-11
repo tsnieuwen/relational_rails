@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get '/resorts/:id/customers', to: 'customers#show_by_resort'
   get '/resorts/:id/edit', to: 'resorts#edit'
   patch '/resorts/:id', to: 'resorts#update'
+  delete '/resorts', to: 'resorts#destroy'
   delete '/resorts/:id', to: 'resorts#destroy'
   get '/customers', to: 'customers#index'
   get '/customers/:id', to: 'customers#show'
@@ -34,5 +35,5 @@ Rails.application.routes.draw do
   patch '/customers/:id', to: 'customers#update'
   delete 'customers/:id', to: 'customers#destroy'
   get '/resorts/:id/customers/new', to: 'customers#new'
-  post '/resorts/:id/customers', to: 'customers#create'
+  post '/resorts/:resort_id/customers', to: 'customers#create'
 end

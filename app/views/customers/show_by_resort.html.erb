@@ -1,4 +1,7 @@
-<h1>All Customers</h1>
+<a href="/resorts">Back to Resorts Index</a></br>
+<a href="/customers">Back to Customers Index</a>
+<a href="/resorts">Resorts Index</a>
+<h1>All Customers for <%= @resort.name %></h1>
 
 <% @customers.each do |customer| %>
   <h3><a href="/customers/<%= customer.id %>"><%= customer.name %></a></h3>
@@ -6,4 +9,11 @@
   <p>Rented Equipment?: <%= customer.equipment %></p>
 <% end %>
 
-<a href="/resorts/<%= @resort.id %>/customers/new">add a new customer to this resort</a>
+<%= form_with url: "/resorts/#{@resort.id}/customers", method: :get, local: true do |form| %>
+  <%= form.label(:min_age, 'Show customers above age: ') %>
+  <%= form.text_field(:min_age) %>
+  <%= form.submit('Filter Customer') %>
+<% end %>
+
+<a href="/resorts/<%= @resort.id %>/customers/new">add a new customer to this resort</a><br><br>
+<a href="/resorts/<%= @resort.id %> ">back to <%= @resort.name %> </a>

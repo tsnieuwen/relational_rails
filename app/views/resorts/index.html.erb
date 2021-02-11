@@ -1,8 +1,17 @@
+<a href="/customers">Back to Customers Index</a></br>
 <h1>All Resorts</h1>
 
 <% @resorts.each do |resort| %>
-  <h3><a href="/resorts/<%= resort.id %>"><%= resort.name %></a></h3>
-<% end %>
+  <a href="/resorts/<%= resort.id %>"><%= resort.name %> : created <%= resort.created_at %></a>
+  <a href="/resorts/<%= resort.id %>/edit"><b>Update</b></a>
 
-<li><a href="/resorts/new">add a new resort</a></li>
-<li><a href="/">back to homepage</a></li>
+  <form action="/resorts" method="POST">
+     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+     <input type="hidden" name="_method" value="DELETE">
+     <input type="hidden" name="resort_id" value=<%= resort.id %>>
+     <input type="submit" value="delete"/>
+  </form>
+<% end %></br>
+
+<a href="/resorts/new">add a new resort</a></br>
+<a href="/">back to homepage</a>

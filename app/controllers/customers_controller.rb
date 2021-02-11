@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-    @customers = Customer.all
+    @customers = Customer.return_customers_who_rented
   end
 
   def show
@@ -9,7 +9,12 @@ class CustomersController < ApplicationController
 
   def show_by_resort
     @resort = Resort.find_by(id: params[:id].to_i)
-    @customers = @resort.customers
+    if !params[:min_age].nil?
+      @customers = @resort.customers.return_customers_age_over_threshold(params[:min_age])
+    else
+      @customers = @resort.customers
+    end
+
   end
 
   def edit
@@ -29,17 +34,18 @@ class CustomersController < ApplicationController
   end
 
   def new
+    @resort_id = params[:id]
   end
 
   def create
-    resort = Resort.find(params[:id])
-    resort.customers.create!(
+    @resort = Resort.find(params[:resort_id])
+    customer = @resort.customers.create!({
                              name: params[:customer][:name],
                              age: params[:customer][:age],
                              equipment: params[:customer][:equipment]
-                            )
-
-    redirect_to '/resorts/:id/customers'
+                            })
+    customer.save
+    redirect_to "/resorts/#{params[:resort_id]}/customers"
   end
 
   def destroy

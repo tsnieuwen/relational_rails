@@ -1,6 +1,6 @@
 class ResortsController < ApplicationController
   def index
-    @resorts = Resort.all
+    @resorts = Resort.all.order(:created_at)
   end
 
   def new
@@ -42,7 +42,11 @@ class ResortsController < ApplicationController
   end
 
   def destroy
-    Resort.destroy(params[:id])
+    if !params[:resort_id].nil?
+      Resort.destroy(params[:resort_id])
+    else
+      Resort.destroy(params[:id])
+    end
     redirect_to '/resorts'
   end
 end
