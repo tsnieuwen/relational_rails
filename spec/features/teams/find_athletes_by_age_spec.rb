@@ -11,7 +11,7 @@ RSpec.describe "As a visitor" do
 
    visit "/teams/#{team1.id}/athletes"
 
-   expect(page).to have_button("Find Athletes")
+   expect(page).to have_button("Filter Athletes")
  end
 
 end
@@ -36,17 +36,11 @@ end
                                 team_id: 1)
 
          visit "/teams/#{team1.id}/athletes"
-         fill_in 'threshold', :with => 38
-         click_button("Find Athletes")
-         expect(current_path).to equal("/teams/#{team1.id}/athletes")
+         fill_in 'filter_min_age', :with => 38
+         click_button("Filter Athletes")
          expect(page).to have_content(athlete1.name)
          expect(page).to have_content(athlete3.name)
          expect(page).not_to have_content(athlete2.name)
     end
 end
 end
-# As a visitor
-# When I visit the Parent's children Index Page
-# I see a form that allows me to input a number value
-# When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
-# Then I am brought back to the current index page with only the records that meet that threshold shown.

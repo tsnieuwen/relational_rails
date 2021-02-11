@@ -3,7 +3,6 @@
 <h1>Athletes</h1>
 
 <% @athletes.each do |athlete| %>
-  <% if @team.id == athlete.team_id %>
     <h3><%= athlete.name %></h3>
     <p>Age: <%= athlete.age %></p>
     <p>Currently Injured?: <%= athlete.injury_list %></p>
@@ -13,16 +12,14 @@
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="delete"/>
     </form>
-  <% end %>
 <% end %><br>
 
 <form action="/teams/<%= @team.id %>/athletes/new" method="get">
   <button type="submit">Create Athlete</button>
 </form><br>
 
-<form action="/teams/<%= @team.id %>/athletes" method="get">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="threshold">Age:</label>
-  <input type="integer" id="threshold"><br><br>
-  <input type="submit" value="Find Athletes">
-</form>
+<%= form_with url: "/teams/#{@team.id}/athletes", method: :get, local: true do |form| %>
+  <%= form.label(:filter_min_age, 'Show athletes above age: ') %>
+  <%= form.text_field(:filter_min_age) %>
+  <%= form.submit('Filter Athletes') %>
+<% end %>
